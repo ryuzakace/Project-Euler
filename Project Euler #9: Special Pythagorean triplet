@@ -1,0 +1,36 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int k,t,n,i,flag=0,j,c;
+    long int maxx=1;
+    cin>>t;
+    //t=1;
+    for(k=0;k<t;k++){
+            maxx=1;
+    flag=0;
+    //n=3000;
+        cin>>n;
+        for(i=1;i<(n/3);i++){
+            j=i;
+            //cout<<"i "<<i<<" ";
+            while((n-(i+j))>j){
+                c=n-(i+j);
+               // cout<<"j "<<j<<" c "<<c;
+                if(((i*i)+(j*j))==(c*c)){
+                    flag=1;
+                    if((i*j*c)>maxx)
+                        maxx=(i*j*c);
+                    break;
+                }j++;
+            }
+        }
+        if(flag)
+            cout<<maxx<<endl;
+        else
+            cout<<"-1"<<endl;
+    }
+    return 0;
+}
