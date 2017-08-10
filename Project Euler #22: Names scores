@@ -1,0 +1,56 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+ int n,k,oo=0,test;
+String m;
+Scanner in=new Scanner(System.in);
+n=in.nextInt();
+String a[]=new String[n];
+for(int i=0;i<n;i++)
+a[i]=in.next();
+Arrays.sort(a);
+test=in.nextInt();
+int ans[]=new int[test];
+while(test!=0)
+{
+m=in.next();
+k=Arrays.binarySearch(a,m);
+if(k==-1)
+{
+ans[oo++]=0;
+}
+else
+{
+k++;
+ans[oo++]=giveans(m,k);
+}
+test--;
+}
+for(int i=0;i<oo;i++)
+System.out.println(ans[i]);
+}
+public static int giveans(String m,int k)
+{
+int sum=0;
+for(int i=0;i<m.length();i++)
+{
+
+char a=m.charAt(i);
+int num=(int)a;
+if(a>96)
+num-=96;
+else if(a<92)
+num-=64;
+sum+=num;
+}
+k*=sum;
+return k;
+    }
+}
+
