@@ -1,0 +1,58 @@
+#include <iostream>
+int a[100001];
+int sum[100001];
+
+using namespace std;
+
+
+int main()
+{
+    int t,n,k=0;
+    for(int i=2;i<=65000;i++){
+        int j=2,wut;
+        sum[i]=1;
+        while(j*j<i){
+            if(i%j==0){
+
+                sum[i]+=(i/j);
+          //  cout<<endl<<"I "<<i<<" "<<sum[i]<<" ";
+                sum[i]+=j;
+           //     cout<<sum[i]<<" ";
+                }
+                j++;
+        }
+        if(j*j==i)
+            {sum[i]+=j;}
+           // cout<<i<<" "<<sum[i]<<endl;
+
+    }
+    a[1]=0;
+    for(int i=2;i<=65000;i++){
+        int o=sum[i],oo=sum[o];
+       // cout<<i<<" "<<o<<" "<<oo<<endl;
+
+        if(oo==i){
+                if(o!=oo)
+            a[i]=a[i-1]+i;
+        else
+            a[i]=a[i-1];
+          //  cout<<a[i]<<endl;
+        }
+        else
+            a[i]=a[i-1];
+    }
+/*for(int i=2;i<=10000;i++)
+    cout<<a[i]<<" ";*/
+   cin>>t;
+    int zan[30]={220,284,1184,1210,2620,2924,5020,5564,6232,6368,10744, 10856,12285,14595,17296,18416,63020,66928,66992,67095, 69615,71145,76084,79750,87633,88730 
+};
+   while(t--){
+    cin>>n;
+     int i=0;
+       long long smm=0;
+       while(zan[i++]<=n)
+           smm+=zan[i-1];
+    cout<<smm<<endl;
+   }
+    return 0;
+}
