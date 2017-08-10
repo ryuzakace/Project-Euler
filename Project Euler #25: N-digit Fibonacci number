@@ -1,0 +1,29 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import math
+
+a=0
+b=1
+i=1
+d=1
+l=0
+li=[]
+while(d<5000):
+    c=a+b
+    a=b
+    b=c
+    c=str(c)
+    d=len(c)
+    
+    if(d>l):
+        li.append(i+1)
+        l=d
+            
+        
+    i=i+1    
+
+t=int(raw_input())
+while(t>0):
+    n=int(raw_input())
+    print li[n-1]
+    
+    t=t-1        
