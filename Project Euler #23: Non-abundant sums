@@ -1,0 +1,68 @@
+#include <iostream>
+#include<map>
+
+using namespace std;
+
+int main()
+{
+    map<int,int> m1;
+    map<int,int> :: iterator it;
+    int n=28123,a[1000],p=0,k=0;
+    int t,inp;
+    cin>>t;
+    while(t--){
+            cin>>inp;
+             if(inp>28123)
+            cout<<"YES"<<endl;
+            else{
+    int i=0;
+    while(i++<=inp){
+
+        int j=2,sum=1;
+        while(j*j<i){
+            if(i%j==0){
+                sum+=j;
+                sum+=i/j;
+            }
+            j++;
+        }
+      if(j*j==i)
+        sum+=j;
+      if(sum>i)
+         {
+             m1[i]=1;
+           // cout<<i<<" "<<m1[i]<<endl;
+         }
+    }
+    int flag=0,re,er;
+
+
+            flag=0;
+
+
+
+
+            for(it=m1.begin();it->first<=(inp/2);it++){
+                re=it->first;
+                er=inp-re;
+                if(m1[er]==1)
+                {
+                    flag=1;
+                    break;
+                }
+
+
+        }
+
+        if(flag)
+            cout<<"YES"<<endl;
+        else
+            cout<<"NO"<<endl;}
+            m1.clear();
+        }
+   // cout<<endl<<"this is the end"<<endl;
+  /*  for(it=m1.begin();it!=m1.end();it++)
+        cout<<"shi "<<it->first<<" "<<it->second<<endl;*/
+
+    return 0;
+}
