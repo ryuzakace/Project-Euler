@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+     int i,j,t,n,ans;
+    scanf("%d",&t);
+    for(i=0;i<t;i++)
+        {
+        scanf("%d",&n);
+        ans=n*(n-1);
+        if(n==2)
+            printf("2\n");
+        else if(n==1)
+            printf("1\n");
+            else{
+            
+            for(j=2;j<=n-1;j++)
+                {
+                if((ans%j)!=0)
+                    {
+                    ans+=n;
+                    j=1;
+                }
+               }
+        printf("%d\n",ans);
+        }}
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
+    return 0;
+}
