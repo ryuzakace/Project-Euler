@@ -1,0 +1,35 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+int a[10000];
+using namespace std;
+
+
+int main() {
+    int t,n,i,j,flag=1,poi=0;
+    a[0]=2;
+    for(i=3;i<=104729;i++){
+        if(i%2!=0){flag=1;
+            for(j=2;j*j<=i;j++){
+                if(i%j==0){
+                    flag=0;
+                    break;
+                }
+            }
+           if(flag){//cout<<i;
+               a[++poi]=i;
+           }
+        }
+    }
+    cin>>t;
+    while(t--){
+        cin>>n;
+        cout<<a[n-1]<<endl;
+    }
+
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+    return 0;
+}
