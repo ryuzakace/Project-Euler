@@ -1,0 +1,41 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+bool prime(int n){
+  if(n<2)
+    return false;
+  for(int x = 2; x*x <= n; x++){
+    if(n%x == 0)
+      return false;
+  }
+  return true;
+}
+
+
+int main() {
+    int n,ii,jj,ma=0;
+    cin>>n;
+    for(int i =-n;i<=n;i++){
+        
+        for(int j=-n;j<=n;j++){
+            int k = 0;
+            while(prime((k*k) + (i*k) + (j) )){
+                k++;
+            }
+            //cout<<i<<" "<<j<<" "<<k<<endl;
+            if(k>ma){
+                ii = i;
+                jj = j;
+                ma = k;
+            }
+            
+        }
+    }
+    cout<<ii<<" "<<jj;//<<" "<<k;
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    return 0;
+}
