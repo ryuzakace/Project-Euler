@@ -1,0 +1,41 @@
+#include<bits/stdc++.h>
+
+#define pb push_back
+#define F first
+#define S second
+#define PB push_back
+#define MP make_pair
+
+typedef long long ll;
+
+
+using namespace std;
+
+
+
+
+int main(){
+  
+    //freopen("input.txt", "r", stdin); freopen("output.txt", "w", stdout);
+    int t;
+    //vector<ll> v;
+    cin>>t;
+    while(t--){
+        ll n,k;
+        cin>>n;
+         for(ll x = 2; x*x <= n ;x++){
+            while(n%x == 0){
+   //   f.push_back(x);
+                k = x;
+                  n/=x;
+    }
+  }
+  if(n > 1)
+  {k = max(k,n);}
+        cout<<k<<endl;
+        
+
+    }
+
+  return 0;
+}
