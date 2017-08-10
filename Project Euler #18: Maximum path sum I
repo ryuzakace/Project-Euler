@@ -1,0 +1,36 @@
+#include <iostream>
+int a [50][50];
+int b [50][50];
+int n;
+using namespace std;
+int fun(int i,int j){
+if(i==(n-1))
+    return a[i][j];
+else if(b[i][j])
+    return b[i][j];
+else
+    return b[i][j]=a[i][j]+max(fun(i+1,j-1),fun(i+1,j+1));
+}
+
+int main()
+{
+    int t,i,j,sum=0;
+    cin>>t;
+    while(t--){
+        cin>>n;
+        for(i=0;i<n;i++){
+            for(j=25-i;j<=25+i;j=j+2){
+                cin>>a[i][j];
+            }
+        }
+      sum=fun(0,25);
+       for(i=0;i<n;i++){
+            for(j=25-i;j<=25+i;j=j+2){
+                a[i][j]=0;
+                b[i][j]=0;
+            }
+        }
+cout<<sum<<endl;
+    }
+    return 0;
+}
