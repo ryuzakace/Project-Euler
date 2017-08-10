@@ -1,0 +1,33 @@
+#include<iostream>
+#include<algorithm>
+using namespace std;
+long long a[1000001];
+int x;
+int main(){
+int t,n;
+long long j,i;
+cin>>t;
+a[2]=2;
+for(i=3;i<1000001;i++)
+{
+if(i%2!=0){
+x=1;
+for(j=2;j*j<=i;j++){
+if(i%j==0){
+x=0;
+break;
+}
+}
+if(x) {
+a[i]=a[i-1]+i;
+}
+else a[i]=a[i-1];
+}
+else a[i]=a[i-1];
+}
+while(t--){
+cin>>n;
+cout<<a[n]<<endl;
+}
+return 0;
+}
