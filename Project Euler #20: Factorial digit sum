@@ -1,0 +1,33 @@
+#include<iostream>
+using namespace std;
+int a[10001],b[10001];
+int main(){
+
+    int i,n,m=10000,t,p;
+    cin>>t;
+    b[10000]=1;
+    a[0]=1;
+    for(i=1;i<=1000;i++){
+            p=10000;
+            int c=0;
+          //  cout<<"m"<<m<<"p"<<p<<"\n";
+            while((p>=m)||c){//cout<<m<<p<<" ";
+               b[p]=b[p]*i+c;
+               c=b[p]/10;
+               if(c){
+                   b[p]=b[p]%10;
+
+               }
+
+               p--;
+            }
+            m=p+1;
+            for(int j=10000;j>p;j--)
+                a[i]+=b[j];
+        }
+    while(t--){
+        cin>>n;
+        cout<<a[n]<<endl;
+    }
+    return 0;
+}
