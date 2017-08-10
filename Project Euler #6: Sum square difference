@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+   unsigned long long int t,n,i,s,sq,d;
+    scanf("%llu",&t);
+    for(i=0;i<t;i++)
+        {
+        scanf("%llu",&n);
+        s=(n*(n+1))/2;
+        s=s*s;
+        sq=(n*(n+1)*(2*n+1))/6;
+        d=s-sq;
+        printf("%llu\n",d);
+    }
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
+    return 0;
+}
