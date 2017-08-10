@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    long long int n,t,sum=0,sume=0,i,x=1,y=1;
+    scanf("%lld",&t);
+    for(i=0;i<t;i++)
+        {
+    scanf("%lld",&n);
+        sume=0;
+        x=1;y=1;
+        sum=0;
+       while(1)
+           {
+            sum=x+y;
+           x=y;
+           y=sum;
+           if(sum<n)
+               sume+=sum;
+           else
+               break;
+           sum=x+y;
+           x=y;
+           y=sum;
+            sum=x+y;
+           x=y;
+           y=sum;
+       }
+        printf("%lld\n",sume);
+    }
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
+    return 0;
+}
