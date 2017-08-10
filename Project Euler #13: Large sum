@@ -1,0 +1,9 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+n=int(raw_input())
+sum=0
+while n>0 :
+    x=int(raw_input())
+    sum = sum + x
+    n = n-1
+x = str(sum)
+print x[0:10]
