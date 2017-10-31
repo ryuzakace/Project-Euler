@@ -1,5 +1,5 @@
 /*If we list all the natural numbers below  that are multiples of  or , we get  and . The sum of these multiples is .
-
+//https://www.hackerrank.com/contests/projecteuler/challenges/euler001
 Find the sum of all the multiples of  or  below .*/
 #include <stdio.h>
 #include <string.h>
