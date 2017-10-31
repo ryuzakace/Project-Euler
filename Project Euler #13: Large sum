@@ -1,4 +1,5 @@
 # Enter your code here. Read input from STDIN. Print output to STDOUT
+//https://www.hackerrank.com/contests/projecteuler/challenges/euler013
 n=int(raw_input())
 sum=0
 while n>0 :
