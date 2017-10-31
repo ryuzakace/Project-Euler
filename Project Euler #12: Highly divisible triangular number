@@ -1,5 +1,8 @@
 #include <iostream>
 #include<math.h>
+
+//https://www.hackerrank.com/contests/projecteuler/challenges/euler012
+
 int check(int x){
 long int s=1;
 int sq=sqrt(x);
